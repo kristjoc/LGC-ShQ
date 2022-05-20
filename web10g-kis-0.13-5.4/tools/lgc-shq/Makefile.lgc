@@ -1,0 +1,7 @@
+# SPDX-License-Identifier: GPL-2.0
+#
+# Makefile for the Linux TCP/IP (INET) layer.
+#
+
+obj-$(CONFIG_TCP_CONG_LGC) += tcp_lgc.o
+tcp_lgc-y += tcp_lgc_main.o tcp_lgc_lut.o tcp_lgc_sysctl.o
