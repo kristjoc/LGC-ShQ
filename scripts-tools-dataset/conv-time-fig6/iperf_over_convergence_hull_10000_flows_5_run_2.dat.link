@@ -1,0 +1,10 @@
+bind failed: Address already in use
+------------------------------------------------------------
+Client connecting to 10.100.67.7, TCP port 5001
+Binding to local address 10.100.16.1
+TCP snd buf size: 16.0 MByte (WARNING: requested 8.00 MByte)
+TCP rcv buf size (max advertised window): 8.00 MByte (default)
+------------------------------------------------------------
+[  3] local 10.100.16.1 port 31938 connected with 10.100.67.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-16.4 sec  7.30 GBytes  3.83 Gbits/sec

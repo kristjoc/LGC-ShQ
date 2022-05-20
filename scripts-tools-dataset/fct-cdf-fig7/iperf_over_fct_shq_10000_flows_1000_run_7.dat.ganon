@@ -1,0 +1,8 @@
+------------------------------------------------------------
+Client connecting to 10.100.67.7, TCP port 5001
+TCP snd buf size:  416 KByte (WARNING: requested 8.00 MByte)
+TCP rcv buf size (max advertised window):  128 KByte (default)
+------------------------------------------------------------
+[  3] local 10.100.46.4 port 46634 connected with 10.100.67.7 port 5001
+[ ID] Interval       Transfer     Bandwidth
+[  3]  0.0-20.0 sec  2.86 GBytes  1.23 Gbits/sec
