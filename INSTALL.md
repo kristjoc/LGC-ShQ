@@ -1,20 +1,42 @@
-# How to upgrade to TEACUP-1.1 + kernel 5.4
+# LGC-ShQ Build & Installation
 
-Lorem ipsum ...
+The LGC-ShQ repository contains a <a
+href="https://wiki.geant.org/display/public/EK/WebTenG">Web10G</a> patched Linux
+kernel with extended performance statistics for TCP. This kernel can be used
+with <a href="http://caia.swin.edu.au/tools/teacup/">TEACUP</a> to run TCP
+performance experiments in a physical testbed. You may build the whole kernel to
+test the LGC-ShQ mechanism, or only the LGC congestion controller and the Shadow
+Queue scheduler. TEACUP is not required to run the experiments since we provide
+all the necessary scripts to collect statistics such as queueing delay, queue
+size, congestion window, etc.</br>
 
-### -1- Clone the forked TEACUP repo
+To set up the Shadow Queue and configure its parameters, we include in this
+repository also the
+[`iproute2`](<https://github.com/kr1stj0n/LGC-ShQ/tree/main/iproute2>)
+directory, which contains the `tc-shq` program. You can compile the whole
+`iproute2` directory or import
+[`q_shq.c`](<https://github.com/kr1stj0n/LGC-ShQ/blob/main/iproute2/tc/q_shq.c>)
+in your own `iproute2`. **Note** that in the latter case, the
+[`pkt_sched.h`](<https://github.com/kr1stj0n/LGC-ShQ/blob/main/iproute2/include/uapi/linux/pkt_sched.h>)
+header needs to be included.
+
+## How to build the Linux kernel
+
+### 1. Clone the LGC-ShQ repo
 
 ```bash
-git clone https://github.com/kr1stj0n/web10g.git
+git clone https://github.com/kr1stj0n/LGC-ShQ.git
 ```
 
-### Build the new kernel
-- First, you need a .config file in the main kernel tree.<br/>
-  Grab one from majora and edit it on your own.
+### 2. Build the new kernel
+
+- First, you need a `.config` file in the root of the kernel source tree.<br/>
+  Make sure to set `CONFIG_TCP_CONG_LGC=m` and `CONFIG_NET_SCH_SHQ=m` to enable
+  the compilation of LGC congestion controller and Shadow Queue scheduler.<br/>
+  Edit the current `.config` file on your own and run the following commands:
 
 ```bash
-cd web10g/web10g-kis-0.13-5.4/
-scp ocarina@majora:/home/ocarina/kristjoc/web10g/web10g-kis-0.13-5.4/.config .
+cd ~/LGC-ShQ/web10g-kis-0.13-5.4/
 make oldconfig
 ```
 
@@ -40,18 +62,18 @@ This is **VERY** helpful if you have a small boot partition.
 ```bash
 cd /lib/modules/5.4.0/
 sudo find . -name *.ko -exec strip --strip-unneeded {} +
-cd /home/ocarina/kristjoc/web10g/web10g-kis-0.13-5.4/
+cd ~/LGC-ShQ/web10g-kis-0.13-5.4/
 sudo make install
 ```
 
-### Reboot to the new kernel
+### 3. Reboot to the new kernel
 
 ```bash
 sudo update-grub
 sudo reboot
 ```
 
-## Build the kernel module which collects TCP statistics
+### 4. (Optional) If you are using TEACUP, build the kernel module which collects the TCP statistics
 
 ```bash
 cd web10g-dlkm
@@ -71,9 +93,9 @@ sudo sysctl -w net.ipv4.tcp_estats=127
 sudo dmesg
 ```
 
-## Install the userland program
+### 5. (Optional) If you are using TEACUP, install the userland program
 
-This programm is used by TEACUP to print the statistics to a file
+This program is used by TEACUP to print the statistics to a file.
 
 ```bash
 cd web10g-userland
@@ -86,7 +108,7 @@ make && sudo make install
 sudo ldconfig
 ```
 
-# Install teacup
+###  6. (Optional) Install TEACUP 3rd-party tools
 
 ```bash
 sudo apt install pdfjam
@@ -113,11 +135,25 @@ cp nttcp /usr/local/bin/
 
 sudo apt install ntp
 ```
-# Analyse
+
+## How to build **ONLY** the kernel modules
+
+Check
+[this](<https://github.com/kr1stj0n/LGC-ShQ/blob/main/web10g-kis-0.13-5.4/tools/lgc-shq/build.sh>)
+build script to install **ONLY** the kernel modules of LGC and ShQ instead of
+compiling the whole kernel source tree. Comment out the lines `eval $CMD_LGC`,
+`eval $CMD_SHQ` and the last line `build_modules` and then run the `build.sh` script.
 
 ```bash
-fab analyse_all:source_filter="S_172.16.10.2_"
-sudo fab analyse_all:source_filter="D_10.100.130.7_*"
+./build.sh
 ```
-## Use iptables-legacy in Debian buster
-sudo update-alternatives --set iptables /usr/sbin/iptables-legacy
+
+Make sure to first edit the
+[`pkt_sched.h`](<https://github.com/kr1stj0n/LGC-ShQ/blob/main/web10g-kis-0.13-5.4/include/uapi/linux/pkt_sched.h>)
+header accordingly.
+
+## How to build the `iproute2` utilities
+
+See the
+[`README`](<https://github.com/kr1stj0n/LGC-ShQ/blob/main/iproute2/README>)
+instructions to compile the `iproute2` utility programs.
