@@ -1,11 +1,13 @@
 <!-- PROJECT SHIELDS -->
 
-<p align="center">
-	[![Contributors][contributors-shield]][contributors-url]
-	[![Forks][forks-shield]][forks-url]
-	[![Stargazers][stars-shield]][stars-url]
-	[![Issues][issues-shield]][issues-url]
-</p>
+<div align="center">
+
+[![Contributors][contributors-shield]][contributors-url]
+[![Forks][forks-shield]][forks-url]
+[![Stargazers][stars-shield]][stars-url]
+[![Issues][issues-shield]][issues-url]
+
+</div>
 
 
 <!-- PROJECT LOGO -->
@@ -31,7 +33,7 @@
   <summary><h2 style="display: inline-block">Table of Contents</h2></summary>
   <ul>
   <li><a href="#introduction">Introduction</a></li>
-  <li><a href="#build-install">Build & Install</a></li>
+  <li><a href="#installation">Installation</a></li>
   <li><a href="#publications">Publications</a></li>
   <li><a href="#reproducibility">Reproducibility</a></li>
   <li><a href="#contributing">Contributing</a></li>
@@ -58,8 +60,8 @@ on how to replicate the experiments described in the LGC-ShQ paper submitted for
 review, check the <a href="https://github.com/kr1stj0n/pep-dna/wiki">Wiki</a>
 page.
 
-<!-- BUILD & INSTALL -->
-## Build & Install
+<!-- INSTALLATION -->
+## Installation
 
 The testbed in which we evaluate LGC-ShQ consists of physical servers that run
 Debian 10 OS with custom 5.4.x kernel. We include the kernel source tree in
