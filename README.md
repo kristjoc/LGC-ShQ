@@ -1,9 +1,12 @@
 <!-- PROJECT SHIELDS -->
 
-[![Contributors][contributors-shield]][contributors-url]
-[![Forks][forks-shield]][forks-url]
-[![Stargazers][stars-shield]][stars-url]
-[![Issues][issues-shield]][issues-url]
+<p align="center">
+	[![Contributors][contributors-shield]][contributors-url]
+	[![Forks][forks-shield]][forks-url]
+	[![Stargazers][stars-shield]][stars-url]
+	[![Issues][issues-shield]][issues-url]
+</p>
+
 
 <!-- PROJECT LOGO -->
 <br />
@@ -106,9 +109,9 @@ appreciated**.
 <!-- LICENSE -->
 ## License
 
-Distributed under `GPLv2 or later` License. See `LICENSES` in
-<https://github.com/kr1stj0n/LGC-ShQ/tree/main/web10g-kis-0.13-5.4/LICENSES> for
-more information.
+Distributed under `GPLv2-or-later` License. See
+[`LICENSES`](<https://github.com/kr1stj0n/LGC-ShQ/tree/main/web10g-kis-0.13-5.4/LICENSES>)
+for more information.
 
 
 <!-- CONTACT -->
