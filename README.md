@@ -57,7 +57,7 @@ achieving good link utilization and fairness.
 This `README.md` file provides information on how to build and install the LGC
 Congestion Control and the Shadow Queue scheduler in Linux. For more information
 on how to replicate the experiments described in the LGC-ShQ paper submitted for
-review, check the <a href="https://github.com/kr1stj0n/pep-dna/wiki">Wiki</a>
+review, check the <a href="https://github.com/kr1stj0n/LGC-ShQ/wiki">Wiki</a>
 page.
 
 <!-- INSTALLATION -->

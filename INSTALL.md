@@ -10,8 +10,8 @@ Queue scheduler. TEACUP is not required to run the experiments since we provide
 all the necessary scripts to collect statistics such as queueing delay, queue
 size, congestion window, etc.</br>
 
-To set up the Shadow Queue and configure its parameters, we include in this
-repository also the
+To set up the Shadow Queue and configure its parameters, we also include in this
+repository the
 [`iproute2`](<https://github.com/kr1stj0n/LGC-ShQ/tree/main/iproute2>)
 directory, which contains the `tc-shq` program. You can compile the whole
 `iproute2` directory or import
