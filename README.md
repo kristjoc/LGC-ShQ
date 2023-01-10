@@ -75,8 +75,7 @@ for intructions on how to build the kernel or the kernel modules.
 <!-- PUBLICATIONS -->
 ## Publications
 
- - LGC-ShQ: Datacenter Congestion Control with Queueless Load-based ECN Marking
-   (Submitted for Review)
+ - Kristjon Ciko, Peyman Teymoori, and Michael Welzl. 2022. LGC-ShQ: Datacenter Congestion Control with Queueless Load-Based ECN Marking. SIGCOMM Comput. Commun. Rev. 52, 4 (October 2022), 2–11. https://doi.org/10.1145/3577929.3577931
 
 <!-- USAGE EXAMPLES -->
 ## Reproducibility
