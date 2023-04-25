@@ -44,7 +44,7 @@ make oldconfig
 
 ```bash
 sudo apt update && sudo apt upgrade
-sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison
+sudo apt-get install git fakeroot build-essential ncurses-dev xz-utils libssl-dev bc flex libelf-dev bison rsync
 ```
 
 - Start the building process
