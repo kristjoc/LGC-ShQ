@@ -84,13 +84,12 @@ We aim to make our work entirely reproducible and encourage interested
 researchers to test the code and replicate the reported experimental
 results. The LGC-ShQ implementation and documentation needed to reproduce all
 the experiments described in the paper are available in this public
-repository. The tools we developed to the run the experiments were installed at
-Step 4 of the previous section. The scripts for automated testing, analysis and
+repository. The scripts for automated testing, analysis and
 plotting of the generated data are located <a
 href="https://github.com/kr1stj0n/LGC-ShQ/tree/main/scripts-tools-dataset">here</a>.
 
 _Please, refer to the <a
-href="https://github.com/kr1stj0n/pep-dna/wiki">Wiki</a> page for a detailed
+href="https://github.com/kr1stj0n/LGC-ShQ/wiki">Wiki</a> page for a detailed
 explanation on how to to replicate all the experiments described in the paper._
 
 <!-- CONTRIBUTING -->
